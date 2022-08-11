@@ -30,30 +30,69 @@ return biggest;
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(arr) {
-  let sum=0;
-
-  arr.forEach((calc1) => {sum+=calc1});
-  return sum;
+  let sum1=0;
+  arr.forEach((calc1) => {sum1+=calc1});
+  return sum1;
 }
 
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
 
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+function sum(arr1) {
+let sum2=0;
+for (let numbers of arr1){
+    switch(typeof(numbers)){
+        case "number":
+        case "boolean":
+            sum2+=numbers;
+        break;
+        case "string":
+            sum2+=numbers.length;
+        break;
+        case "object":
+        case "array":
+          throw new Error("Unsupported data type sir or ma'am");
+        break;
+    }
+  }
+  return sum2;
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr3) {
+
+if(arr3.length==0){
+    return null;
+}
+const media3 = arr3.reduce((a, b) => a + b, 0) / arr3.length;
+return media3;
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(arr4) { 
+    let sumLetras=0
+    if(arr4.length===0){
+      return null;
+    }
+    function sumatorio (arr){
+        sumLetras+=arr.length;
+        console.log(sumLetras);
+    }
+    arr4.forEach((sumatorio));
+    console.log(sumLetras);
+    return sumLetras/arr4.length;
+}
+
+
 
 // Bonus - Iteration #4.1
 function avg() {}
