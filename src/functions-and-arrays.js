@@ -93,9 +93,31 @@ function averageWordLength(arr4) {
 }
 
 
-
 // Bonus - Iteration #4.1
-function avg() {}
+
+function avg(arr5) {
+    let sum3=0;
+    if(arr5.length===0){
+      return null;
+    }
+    for (let numbers of arr5){
+        switch(typeof(numbers)){
+            case "number":
+            case "boolean":
+                sum3+=numbers;
+            break;
+            case "string":
+                sum3+=numbers.length;
+            break;
+            case "object":
+            case "array":
+              throw new Error("Unsupported data type sir or ma'am");
+            break;
+        }
+      }
+      return sum3/arr5.length;
+    }
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -112,14 +134,36 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr6) {
+  if (arr6.length===0){
+    return null;
+  }
+  let finalArray=[];
+  for (let i=0; i<arr6.length;i++){
+      if (!finalArray.includes(arr6[i])){
+          finalArray.push(arr6[i]);
+          console.log(finalArray);
+          }
+      }
+  return finalArray;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arr7,word) {
+  if (arr7.length===0){
+    return null;
+  }
+  
+  if (arr7.includes(word)) {
+    return true;
+} else {
+    return false;
+}
+}
 
 
 
@@ -138,7 +182,27 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arr8,word) {
+  let count=0;
+  let respond=0;
+  if (arr8.length===0){
+    return 0;
+  }
+  for (i=0; i<arr8.length; i++){
+      if (arr8[i]===word){
+          count=count+1;
+      }
+  }
+  console.log(count);
+  switch(count){
+    case 0:
+      return 0;
+    case 1:
+      return 1;
+    case 5:
+      return 5;
+  }
+}
 
 
 
