@@ -26,7 +26,8 @@ const matrix = [
 
 console.log(matrix.length);
 
-
+/*
+linha
 let count=0;
 let calculator=0;
 for (let i=0;i<matrix[0].length;i++) {
@@ -36,6 +37,8 @@ for (let i=0;i<matrix[0].length;i++) {
     console.log("");
 }
 
+
+// coluna
 for (let i=0;i<matrix.length;i++) {
     for (let j=0;j<4;j++){
         console.log(matrix[j+i][0]);
@@ -43,21 +46,32 @@ for (let i=0;i<matrix.length;i++) {
     console.log("");
 }
 
-//   let uniqueArr=[];
+coluna principal
 
-//   if(arr6.length===0){
-//       return null;
-//   }
-  
-//   function compareAndPut(array){
-//       if (array.includes()
-//   }
 
-//   arr6.ForEach((vazio))
+*/
 
-//   for (let i=0;i<arr6.length;i++){
-//       if (!uniqueArr.includes(arr6[i])) uniqueArr.push(arr6[i]);
-//   console.log (uniqueArr);
-  
-// }
-// }
+for (let i=0; i<10;i++){
+    if (i%2==0){
+        continue;
+    }
+    console.log(i);
+}
+
+contador=matrix.length-3;
+
+for (let h=0;h<matrix[0].length;h++) {
+    if (h>16) { break; }
+    contador--;
+    console.log(contador);
+    for (let i=0;i<matrix.length;i++) {
+        if (i>contador) {continue}
+        for (let j=0;j<4;j++){
+        console.log(`${i+j+h},${j+i} = ${matrix[j+i+h][j+i]}`);
+        //console.log(matrix[j+i][j+i]);
+        //console.log(`${h},${i},${j} - ${j+i+h},${j+i}`);
+        }
+    console.log("");
+    }
+    if (contador<0) {break}
+}

@@ -232,7 +232,25 @@ const matrix = [
 
 function greatestProduct() {}
 
+contador=matrix.length-3;
 
+// diagonal do centro para a esquerda
+
+for (let h=0;h<matrix[0].length;h++) {
+    if (h>16) { break; }
+    contador--;
+    console.log(contador);
+    for (let i=0;i<matrix.length;i++) {
+        if (i>contador) {continue}
+        for (let j=0;j<4;j++){
+        console.log(`${i+j+h},${j+i} = ${matrix[j+i+h][j+i]}`);
+        //console.log(matrix[j+i][j+i]);
+        //console.log(`${h},${i},${j} - ${j+i+h},${j+i}`);
+        }
+    console.log("");
+    }
+    if (contador<0) {break}
+}
 
 
 // The following is required to make unit tests work.
