@@ -232,9 +232,11 @@ const matrix = [
 
 function greatestProduct() {}
 
-contador=matrix.length-3;
+//  diagonais !!!
 
-// diagonal do centro para a esquerda
+let mult=1;
+let maior=0;
+let contador=matrix.length-3;
 
 for (let h=0;h<matrix[0].length;h++) {
     if (h>16) { break; }
@@ -244,13 +246,43 @@ for (let h=0;h<matrix[0].length;h++) {
         if (i>contador) {continue}
         for (let j=0;j<4;j++){
         console.log(`${i+j+h},${j+i} = ${matrix[j+i+h][j+i]}`);
+        mult*=matrix[j+i+h][j+i];
+        console.log(mult);
         //console.log(matrix[j+i][j+i]);
         //console.log(`${h},${i},${j} - ${j+i+h},${j+i}`);
         }
     console.log("");
+    if (mult>maior) {maior=mult}
+    mult=1;
     }
     if (contador<0) {break}
 }
+
+contador=matrix[0].length-3;
+
+for (let h=0;h<matrix.length;h++) {
+    if (h>16) { break; }
+    contador--;
+    console.log(contador);
+    for (let i=0;i<matrix[0].length;i++) {
+        if (i>contador) {continue}
+        for (let j=0;j<4;j++){
+        console.log(`${i+j},${j+i+h} = ${matrix[j+i][j+i+h]}`);
+        //console.log(matrix[j+i][j+i]);
+        //console.log(`${h},${i},${j} - ${j+i+h},${j+i}`);
+        mult*=matrix[j+i+h][j+i];
+        console.log(mult);
+        }
+    console.log("");
+    if (mult>maior) {maior=mult}
+    mult=1;
+    }
+    if (contador<0) {break}
+}
+
+console.log("maior das diagonais");
+console.log(maior);
+
 
 
 // The following is required to make unit tests work.
